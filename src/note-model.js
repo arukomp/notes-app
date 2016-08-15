@@ -8,6 +8,7 @@
   };
 
   exports.Note = Note;
+  exports.Note.showNote = Note.showNote;
 
 
 })(this);

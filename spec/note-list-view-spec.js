@@ -5,12 +5,12 @@ function returnsListView() {
   list.addNote(noteOne);
   list.addNote(noteTwo);
 
-  var htmlList = "<li><div>I love Ruby</div></li><li><div>I don't love Javascript</div></li></ul>"
+  var html = "<li><div>I love Ruby</div></li>,<li><div>I don't love Javascript</div></li></ul>";
   console.log(list);
   var listView = new ListView(list);
 
-  isTrue(listView.htmlList() === htmlList);
+  isTrue(listView.htmlList() === html);
 
-};
+}
 
 returnsListView();
