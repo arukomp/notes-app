@@ -1,14 +1,13 @@
-function createsANote() {
-  var note = new Note("My favourite language is Ruby");
-  assert.isTrue(note.getBody() === "My favourite language is Ruby");
-}
+describe("Notes Model: ", function() {
 
-function createsAnEmptyNote() {
-  var note = new Note();
-  assert.isTrue(note.getBody() === "");
-}
+  it("can create a note", function() {
+    var note = new Note("My favourite language is Ruby");
+    assert.isTrue(note.getBody() === "My favourite language is Ruby");
+  });
 
-document.write('Notes Model: ');
-createsANote();
-createsAnEmptyNote();
-document.write('<br>');
+  it("can create an empty note", function() {
+    var note = new Note();
+    assert.isTrue(note.getBody() === "");
+  });
+  
+});
