@@ -1,11 +1,10 @@
 (function(exports){
   function Note(note){
-    _notes = []
-    _notes.push(note);
+    _notes = note;
   };
 
   Note.prototype.showNote = function() {
-    return _notes[0];
+    return _notes;
   }
 
   exports.Note = Note;
