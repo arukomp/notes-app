@@ -1,6 +1,8 @@
-var note = new Note();
-var myNote = "My favorite language is Ruby";
 
-note.addNote(myNote);
+function canCreateANote() {
+  var myNote = "My favorite language is Ruby";
+  var note = new Note(myNote);
+  isTrue(note.showNote() === myNote );
+};
 
-isTrue(note.showNote() === myNote );
+canCreateANote();

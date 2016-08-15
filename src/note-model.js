@@ -1,12 +1,8 @@
 (function(exports){
-  function Note(){
+  function Note(note){
     _notes = []
+    _notes.push(note);
   };
-
-  Note.prototype.addNote = function(noteItem) {
-    _notes.push(noteItem);
-  };
-
 
   Note.prototype.showNote = function() {
     return _notes[0];
