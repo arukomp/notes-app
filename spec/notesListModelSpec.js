@@ -12,5 +12,7 @@ function itAddsNewNote() {
   assert.isTrue(testNote.getBody() === 'My favourite language is Fortran 77');
 }
 
+document.write('NotesList Model: ');
 itReturnsAnEmptyArrayAtStart();
 itAddsNewNote();
+document.write('<br>');

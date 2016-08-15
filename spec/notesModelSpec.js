@@ -8,5 +8,7 @@ function createsAnEmptyNote() {
   assert.isTrue(note.getBody() === "");
 }
 
+document.write('Notes Model: ');
 createsANote();
 createsAnEmptyNote();
+document.write('<br>');
