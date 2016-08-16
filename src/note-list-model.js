@@ -16,7 +16,7 @@
   List.prototype.getNoteById = function(id){
     var noteFound;
     this._list.forEach(function(note){
-      if(note.id === id){
+      if(note.id == id){
         noteFound = note;
       }
     });

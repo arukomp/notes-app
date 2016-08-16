@@ -49,26 +49,30 @@ describe("Note Controller", function() {
     singleNote = new SingleNoteView(list.returnNotes()[0]);
 
     var appDiv = document.createElement('div', {id: 'app'});
-    document.getElementById = function(id) {
-      if(id==='app'){
-        return appDiv;
-      }
+    document.getElementById = function() {
+      return appDiv;
     };
 
     noteController = new NoteController(view);
     noteController.insert();
-    noteController.setupNoteListeners(noteController);
+    function showNoteForCurrentPage(){
+      noteController.showNote(noteController.getNoteFromUrl(window.location));
+    };
+    window.addEventListener("hashchange", showNoteForCurrentPage);
 
     appDiv.getElementsByTagName('a')[0].click();
 
-    var htmlOutput = singleNote.getHTML();
-    var element = document.getElementById('app');
+    // needed a timeout because this code was being executed before the actual
+    // click above occurs.
+    window.setTimeout(function(){
+      var htmlOutput = singleNote.getHTML();
+      var element = appDiv;
 
-    console.log("expected: ", htmlOutput);
-    console.log("got: ", element.innerHTML);
+      console.log("expected: ", htmlOutput);
+      console.log("got: ", element.innerHTML);
 
-    isTrue(htmlOutput === element.innerHTML);
-    document.getElementById = document.__proto__.getElementById;
-
+      isTrue(htmlOutput === element.innerHTML);
+      document.getElementById = document.__proto__.getElementById;
+    }, 500);
   });
 });
