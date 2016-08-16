@@ -6,8 +6,8 @@ describe("Note List View", function(){
     list.addNote(noteOne);
     list.addNote(noteTwo);
 
-    var html = "<ul><li><a href=\"#" +
-               + list.returnNotes()[0].id + "\">I love Ruby</a></li><li><a href=\"#" +
+    var html = "<ul><li><a href=\"#"
+               + list.returnNotes()[0].id + "\">I love Ruby</a></li><li><a href=\"#"
                + list.returnNotes()[1].id + "\">I love Javascript</a></li></ul>";
 
     var listView = new ListView(list);

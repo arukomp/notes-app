@@ -14,4 +14,19 @@ describe("Note List Model", function(){
 
   });
 
+  it('can find a note by id', function(){
+    var noteOne = "I love Ruby";
+    var noteTwo = "I don't love Javascript";
+
+    var list = new List();
+
+    list.addNote(noteOne);
+    list.addNote(noteTwo);
+
+    var idOne = list.returnNotes()[0].id;
+
+    isTrue(list.getNoteById(idOne).showNote() === noteOne);
+
+  });
+
 });
