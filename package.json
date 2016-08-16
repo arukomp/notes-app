@@ -1,0 +1,27 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "description": "Built with pure Javascript.  No front end or testing frameworks used.",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "start": "^4.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzishtiaq/notes_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzishtiaq/notes_app/issues"
+  },
+  "homepage": "https://github.com/mzishtiaq/notes_app#readme"
+}
