@@ -33,6 +33,9 @@ describe("Note Controller", function() {
     var htmlOutput = view.htmlList();
     var element = document.getElementById('app');
 
+    console.log("expected: ", htmlOutput);
+    console.log("got: ", element.innerHTML);
+
     isTrue(htmlOutput === element.innerHTML);
     document.getElementById = document.__proto__.getElementById;
   });

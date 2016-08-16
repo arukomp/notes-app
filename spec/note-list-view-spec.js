@@ -6,7 +6,9 @@ describe("Note List View", function(){
     list.addNote(noteOne);
     list.addNote(noteTwo);
 
-    var html = "<ul><li><div>I love Ruby</div></li><li><div>I love Javascript</div></li></ul>";
+    var html = "<ul><li><a href=\"#" +
+               + list.returnNotes()[0].id + "\">I love Ruby</a></li><li><a href=\"#" +
+               + list.returnNotes()[1].id + "\">I love Javascript</a></li></ul>";
 
     var listView = new ListView(list);
 
@@ -19,9 +21,22 @@ describe("Note List View", function(){
     var list = new List();
     list.addNote(noteOne);
 
-    var html = "<ul><li><div>I love Ruby and I mi...</div></li></ul>";
+    var html = "<ul><li><a href=\"#"  +
+               + list.returnNotes()[0].id + "\">I love Ruby and I mi...</a></li></ul>";
     var listView = new ListView(list);
 
     isTrue(listView.htmlList() === html);
+  });
+
+  it("includes a link to a specific note", function() {
+    var list = new List();
+    list.addNote("Beautiful code here");
+    var view = new ListView(list);
+
+    var html = "<ul><li><a href=\"#" +
+               list.returnNotes()[0].id +
+               "\">Beautiful code here</a></li></ul>";
+    isTrue(view.htmlList() === html);
+
   });
 });
