@@ -6,8 +6,10 @@ function canCreateAlistOfNotes(){
 
   list.addNote(noteOne);
   list.addNote(noteTwo);
-  var testList = list.printNotes();
+  var testList = list.returnNotes();
   isTrue(testList.length == 2);
+  isTrue(testList[0].showNote()=== noteOne);
+  isTrue(testList[1].showNote()=== noteTwo);
 
 }
 

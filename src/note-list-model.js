@@ -1,15 +1,15 @@
 (function(exports){
   function List(){
-    _list = [];
+    this._list = [];
   }
 
   List.prototype.addNote = function(note){
     var noteItem = new Note(note);
-    _list.push(noteItem);
+    this._list.push(noteItem);
   };
 
-  List.prototype.printNotes = function(){
-    return _list;
+  List.prototype.returnNotes = function(){
+    return this._list;
   };
 
   exports.List = List;

@@ -5,8 +5,8 @@ function returnsListView() {
   list.addNote(noteOne);
   list.addNote(noteTwo);
 
-  var html = "<li><div>I love Ruby</div></li>,<li><div>I don't love Javascript</div></li></ul>";
-  console.log(list);
+  var html = "<ul><li><div>I love Ruby</div></li><li><div>I don't love Javascript</div></li></ul>";
+  
   var listView = new ListView(list);
 
   isTrue(listView.htmlList() === html);

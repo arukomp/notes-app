@@ -1,14 +1,12 @@
 (function(exports){
   function Note(note){
-    _notes = note;
+    this._notes = note;
   }
 
   Note.prototype.showNote = function() {
-    return _notes;
+    return this._notes;
   };
 
   exports.Note = Note;
-  exports.Note.showNote = Note.showNote;
-
 
 })(this);
