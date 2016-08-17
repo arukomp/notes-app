@@ -7,7 +7,7 @@
   ListView.prototype.htmlList = function() {
     var listToHtml = this._listView.returnNotes();
     var mappedList = listToHtml.map(function(note){
-       return '<li><div>' + note.showNote() + '</div></li>';
+       return '<li><div>' + note.showNote().slice(0, 20) + '</div></li>';
     });
     return '<ul>' + mappedList.join('') + '</ul>';
   };
