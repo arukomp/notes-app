@@ -14,7 +14,7 @@ describe("Note List View", function() {
     list.addNote(note1);
     var listView = new ListView(list);
 
-    isTrue(listView.htmlList() === html);
+    isTrue(listView.getHTML() === html);
     // isTrue(document.getElementsByTagName("li") === "li");
   });
 });

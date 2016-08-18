@@ -4,7 +4,7 @@
     this.currentList = list;
   }
 
-  ListView.prototype.htmlList = function() {
+  ListView.prototype.getHTML = function() {
 
     var listToHtml = this.currentList.getAllNotes();
     var mappedList = listToHtml.map(function(note) {
