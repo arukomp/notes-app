@@ -9,7 +9,7 @@
     var listToHtml = this.currentList.getAllNotes();
     var mappedList = listToHtml.map(function(note) {
       var text = note.getText();
-      return "<li>" + text + "</li>";
+      return "<li>" + text.slice(0, 20) + "</li>";
     });
 
     return '<ul>' + mappedList.join('') + '</ul>';
