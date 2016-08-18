@@ -1,8 +1,8 @@
 describe("Note List View", function() {
 
   it("takes a note list model upon instantiation", function() {
-    var html = "<ul><li>Test 1</li></ul>";
     var note1 = new Note("Test 1");
+    var html = "<ul><li><a href='#" + note1.id + "'>Test 1</a></li></ul>";
     var list = new List();
     var listView = new ListView(list);
     list.addNote(note1);
@@ -15,7 +15,6 @@ describe("Note List View", function() {
     var list = new List();
     var listView = new ListView(list);
     list.addNote(note);
-    console.log(listView.getHTML());
-    isTrue(listView.getHTML() === "<ul><li>asdfgasdfgasdfgasdfg</li></ul>");
+    isTrue(listView.getHTML() === "<ul><li><a href='#" + note.id + "'>asdfgasdfgasdfgasdfg</a></li></ul>");
   });
 });
