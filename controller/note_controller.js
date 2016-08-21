@@ -27,7 +27,7 @@
       event.preventDefault();
       var noteText = event.target["text"].value;
       self.addNote(noteText);
-
+      event.target["text"].value = "";
     })
   }
 
@@ -37,9 +37,13 @@
   }
 
   NoteController.prototype.showNote = function() {
-    var id = parseInt(window.location.hash.split("#")[1]);
-    var note = this._noteList.getNoteById(id);
-    this._view = new SingleNoteView(note);
+    var id = window.location.hash.split("#")[1];
+    if (id === "list") {
+      this._view = new NoteListView(this._noteList);
+    } else {
+      var note = this._noteList.getNoteById(parseInt(id));
+      this._view = new SingleNoteView(note);
+    }
     this.insertHTML("app");
   }
 

@@ -45,6 +45,7 @@ describe("Controller", function() {
     var note = noteList.getNotes()[0];
     var singleNote = new SingleNoteView(note);
     var controller = new NoteController(noteList);
+    var noteListView = new NoteListView(noteList);
 
     var appDiv = document.createElement('div', {id: 'app'} );
     controller.getElement = function () {
@@ -55,6 +56,11 @@ describe("Controller", function() {
     window.location.hash = "#" + note.id;
     controller.showNote();
     assert.isEqual(appDiv.innerHTML, singleNote.getHTML() );
+
+    window.location.hash = "#list";
+    controller.showNote();
+    assert.isEqual(appDiv.innerHTML, noteListView.getHTML());
+
     window.location.hash = "";
   });
 

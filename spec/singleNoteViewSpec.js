@@ -8,6 +8,7 @@ describe("Single Note View", function() {
   it("Has a method that returns a string of HTML of a note", function() {
     var single_note = new Note("Test");
     var single_note_view = new SingleNoteView(single_note);
-    assert.isTrue(single_note_view.getHTML() === "<div>Test</div>");
+    var htmlString = "<div>Test</div><br><a href=\"#list\">Back</a>"
+    assert.isEqual(single_note_view.getHTML(), htmlString);
   });
 });
